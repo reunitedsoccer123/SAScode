@@ -1,0 +1,15 @@
+data work.price_increase;
+   set orion.prices;
+   Year=1;
+   year1=factor*unit_price;
+   output;
+   Year=2;
+   year2=factor*unit_price;
+   output;
+   Year=3;
+   year3=factor*unit_price;
+   output;
+run;
+proc print data=work.price_increase;
+ var Product_ID Unit_Price Year;
+run;
